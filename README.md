@@ -33,26 +33,24 @@ At its foundation, the dataset maps physical city environments to a digital twin
 To ensure robust model generalization across domain gaps, data collection spanned 53.8 km of continuous trajectories across three megacities: Wuhan, Shanghai, and Nanjing. The realistic city-scale sampling brings natural class imbalance, vividly illustrated by a strict long-tail distribution in both 2D targets and 3D points.
 
 <p align="center">
-  <img src="media/Trajectory.jpg" alt="Collection trajectories" style="width:48%" />
-  <img src="media/dataset_longtail_pies.png" alt="Long-tail distribution" style="width:48%" />
+  <img src="media/Trajectory.jpg" alt="Collection trajectories" style="width:62%" />
 </p>
 
 ### 3. Comprehensive Perception in 2D and 3D Spaces
 Perceiving these heterogeneous assets begins with comprehensive and varied annotations. The dataset features robust dense 2D bounding boxes in overlapping panoramic views, tightly coupled with high-quality 3D point cloud labels (including semantic classes, instance clusters, and distinct 3D geometry constraints).
 
 <p align="center">
-  <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="width:78%" />
-  <br><br>
-  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:68%" />
+  <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="height:300px; max-width:48%; object-fit:contain;" />
+  <img src="media/3D_annotation.jpg" alt="3D annotations" style="height:300px; max-width:48%; object-fit:contain;" />
 </p>
 
 ### 4. Continuous Association and Cognitive Diagnosis
 Beyond independent frame perception, WHU-Infra3D manages cross-view duplicate observations through globally consistent cross-frame data association. Finally, the benchmark pushes past conventional category-level detection into deep asset maintenance diagnosis, leveraging rich, instance-level attribute schemas and real-world defect statuses.
 
 <p align="center">
-  <img src="media/Track_annotation.jpg" alt="Cross-frame association" style="width:70%" />
+  <img src="media/Track_annotation.jpg" alt="Cross-frame association" style="width:52%" />
   <br><br>
-  <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:70%" />
+  <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:52%" />
 </p>
 
 ## News
@@ -87,6 +85,12 @@ WHU-Infra3D contains 10 roadside infrastructure categories:
 - Manhole
 - Traffic Cone
 - Spherical Bollard
+
+The category distribution exhibits a clear long-tail pattern in both 2D and 3D annotations:
+
+<p align="center">
+  <img src="media/dataset_longtail_pies.png" alt="Long-tail category distribution" style="width:52%" />
+</p>
 
 ### Annotation Dimensions
 
