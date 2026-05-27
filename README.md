@@ -14,70 +14,43 @@ Key characteristics:
 - **3,199** 3D instances and **181,351** attribute/status labels in the Core Set.
 - Full-stack support for detection, matching, localization, segmentation, and attribute recognition.
 
-## Visual Explanation (from Paper Figures)
+## Dataset Overview & Visual Highlights
 
-### 1) What is infrastructure inventory?
+The core objective of WHU-Infra3D is to transform raw multi-modal observations into a structured roadside asset profile that possesses accurate geometry and fine-grained maintenance semantics. Rather than acting strictly as a collection of disjointed data frames, WHU-Infra3D provides a cohesive, full-stack narrative bridging 2D perception, 3D structure, and cognitive diagnosis.
 
-The following figure summarizes the core objective of WHU-Infra3D: transforming raw multi-modal observations into a structured asset profile with geometry and diagnostic semantics.
+### 1. The Inventory Pipeline and Architecture
+At its foundation, the dataset maps physical city environments to a digital twin. We construct a complete loop: defining the infrastructure inventory task, capturing the scene with images and point clouds, and systematically translating those observations into structured asset instances.
 
 <p align="center">
-  <img src="media/inventory_definition.jpg" alt="Infrastructure inventory definition" style="width:78%" />
+  <img src="media/inventory_definition.jpg" alt="Infrastructure inventory definition" style="width:85%" />
+  <br><br>
+  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:95%" />
 </p>
 
-### 2) Overall dataset design
-
-WHU-Infra3D jointly models image-space perception, point-cloud understanding, and cross-modal/cross-frame instance association.
+### 2. Large-scale Acquisition and Generalization Challenges
+To ensure robust model generalization across domain gaps, data collection spanned 53.8 km of continuous trajectories across three megacities: Wuhan, Shanghai, and Nanjing. The realistic city-scale sampling brings natural class imbalance, vividly illustrated by a strict long-tail distribution in both 2D targets and 3D points.
 
 <p align="center">
-  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:92%" />
+  <img src="media/Trajectory.jpg" alt="Collection trajectories" style="width:48%" />
+  <img src="media/dataset_longtail_pies.png" alt="Long-tail distribution" style="width:48%" />
 </p>
 
-### 3) Cross-city data acquisition
-
-Data are collected in Wuhan, Nanjing, and Shanghai to introduce realistic domain gaps for generalization evaluation.
+### 3. Comprehensive Perception in 2D and 3D Spaces
+Perceiving these heterogeneous assets begins with comprehensive and varied annotations. The dataset features robust dense 2D bounding boxes in overlapping panoramic views, tightly coupled with high-quality 3D point cloud labels (including semantic classes, instance clusters, and distinct 3D geometry constraints).
 
 <p align="center">
-  <img src="media/Trajectory.jpg" alt="Collection trajectories" style="width:62%" />
+  <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="width:95%" />
+  <br><br>
+  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:80%" />
 </p>
 
-### 4) 2D annotation quality and diversity
-
-Panoramic imagery is annotated with dense 2D boxes in diverse urban scenes.
-
-<p align="center">
-  <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="width:92%" />
-</p>
-
-### 5) 3D geometry and instance-level labels
-
-The dataset provides semantic, instance, and geometric supervision in point clouds.
+### 4. Continuous Association and Cognitive Diagnosis
+Beyond independent frame perception, WHU-Infra3D manages cross-view duplicate observations through globally consistent cross-frame data association. Finally, the benchmark pushes past conventional category-level detection into deep asset maintenance diagnosis, leveraging rich, instance-level attribute schemas and real-world defect statuses.
 
 <p align="center">
-  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:62%" />
-</p>
-
-### 6) Cross-frame tracking and association
-
-A globally consistent ID mechanism supports object deduplication and robust multi-view integration.
-
-<p align="center">
-  <img src="media/Track_annotation.jpg" alt="Cross-frame association" style="width:62%" />
-</p>
-
-### 7) Attribute and status schema
-
-Beyond category labels, WHU-Infra3D defines fine-grained attributes and statuses for maintenance-oriented cognition.
-
-<p align="center">
-  <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:62%" />
-</p>
-
-### 8) Long-tail distribution challenge
-
-Class imbalance is explicit in both 2D and 3D annotations, motivating robust long-tail learning.
-
-<p align="center">
-  <img src="media/dataset_longtail_pies.png" alt="Long-tail distribution" style="width:55%" />
+  <img src="media/Track_annotation.jpg" alt="Cross-frame association" style="width:85%" />
+  <br><br>
+  <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:85%" />
 </p>
 
 ## News
