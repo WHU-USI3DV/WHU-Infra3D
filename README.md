@@ -1,5 +1,9 @@
 <h1 align="center"><p>WHU-Infra3D: A Full-stack Multi-modal Dataset and Benchmark for 3D Roadside Infrastructure Inventory</p></h1>
 
+<p align="center">
+  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:78%" />
+</p>
+
 This repository hosts the website materials and documentation for **WHU-Infra3D**.
 
 ## Introduction
@@ -22,9 +26,7 @@ The core objective of WHU-Infra3D is to transform raw multi-modal observations i
 At its foundation, the dataset maps physical city environments to a digital twin. We construct a complete loop: defining the infrastructure inventory task, capturing the scene with images and point clouds, and systematically translating those observations into structured asset instances.
 
 <p align="center">
-  <img src="media/inventory_definition.jpg" alt="Infrastructure inventory definition" style="width:85%" />
-  <br><br>
-  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:95%" />
+  <img src="media/inventory_definition.jpg" alt="Infrastructure inventory definition" style="width:70%" />
 </p>
 
 ### 2. Large-scale Acquisition and Generalization Challenges
@@ -39,18 +41,18 @@ To ensure robust model generalization across domain gaps, data collection spanne
 Perceiving these heterogeneous assets begins with comprehensive and varied annotations. The dataset features robust dense 2D bounding boxes in overlapping panoramic views, tightly coupled with high-quality 3D point cloud labels (including semantic classes, instance clusters, and distinct 3D geometry constraints).
 
 <p align="center">
-  <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="width:95%" />
+  <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="width:78%" />
   <br><br>
-  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:80%" />
+  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:68%" />
 </p>
 
 ### 4. Continuous Association and Cognitive Diagnosis
 Beyond independent frame perception, WHU-Infra3D manages cross-view duplicate observations through globally consistent cross-frame data association. Finally, the benchmark pushes past conventional category-level detection into deep asset maintenance diagnosis, leveraging rich, instance-level attribute schemas and real-world defect statuses.
 
 <p align="center">
-  <img src="media/Track_annotation.jpg" alt="Cross-frame association" style="width:85%" />
+  <img src="media/Track_annotation.jpg" alt="Cross-frame association" style="width:70%" />
   <br><br>
-  <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:85%" />
+  <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:70%" />
 </p>
 
 ## News
