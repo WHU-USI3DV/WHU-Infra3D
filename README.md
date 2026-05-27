@@ -109,25 +109,83 @@ WHU-Infra3D provides four complementary annotation dimensions:
 3. Cross-frame and cross-modal instance association IDs.
 4. Fine-grained attribute and status annotations for asset diagnosis.
 
-### Suggested Folder Structure
+### Current Release Structure
 
 ```text
-WHU-Infra3D/
-├── images/
-│   ├── wuhan/
-│   ├── shanghai/
-│   └── nanjing/
-├── pointclouds/
-│   ├── wuhan/
-│   ├── shanghai/
-│   └── nanjing/
-├── annotations/
-│   ├── det2d/
-│   ├── seg3d/
-│   ├── tracking/
-│   └── attributes/
-└── metadata/
+WHU-Infra3D-Dataset/
+├── Wuhan/
+│   ├── BaseSet/
+│   │   └── PanoImages/
+│   └── CoreSet/
+│       ├── PanoImages/
+│       ├── image_detect_track_3dbox/
+│       └── PointCloud/
+├── Shanghai/
+│   ├── BaseSet/
+│   │   └── PanoImages/
+│   └── CoreSet/
+│       ├── PanoImages/
+│       ├── image_detect_track_3dbox/
+│       └── PointCloud/
+└── Nanjing/
+    ├── BaseSet/
+    │   └── PanoImages/
+    └── CoreSet/
+        ├── PanoImages/
+        ├── image_detect_track_3dbox/
+        └── PointCloud/
 ```
+
+    ### Folder Contents
+
+    For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
+
+    1. `BaseSet/PanoImages/`
+      - Stores panoramic images for the full collected trajectory of that city.
+      - These images are used as the large-scale image pool.
+    2. `CoreSet/PanoImages/`
+      - Stores the core subset of panoramic images used for benchmark construction.
+      - File stems are aligned with `CoreSet/image_detect_track_3dbox/` annotations.
+    3. `CoreSet/image_detect_track_3dbox/`
+      - Stores per-image annotation TXT files (same stem as image name).
+      - Each row describes one observed infrastructure instance with 2D box + 3D box + tracking/object identity.
+    4. `CoreSet/PointCloud/`
+      - Stores point cloud data aligned with the core subset.
+      - Used for 3D perception and cross-modal tasks.
+
+    ### image_detect_track_3dbox TXT Format
+
+    Each annotation file is comma-separated. Each row has 13 columns:
+
+    1. `class_name`: semantic category name.
+    2. `x1`: left pixel coordinate of 2D box.
+    3. `y1`: top pixel coordinate of 2D box.
+    4. `x2`: right pixel coordinate of 2D box.
+    5. `y2`: bottom pixel coordinate of 2D box.
+    6. `h`: 3D box height.
+    7. `w`: 3D box width.
+    8. `l`: 3D box length.
+    9. `x`: 3D box center X in world/map coordinate system.
+    10. `y`: 3D box center Y in world/map coordinate system.
+    11. `z`: 3D box center Z in world/map coordinate system.
+    12. `rot_y`: yaw/orientation of the 3D box.
+    13. `object_id`: cross-image instance ID for the same physical infrastructure object.
+
+    Example row:
+
+    ```text
+    Traffic Sign,1200.0,980.0,1288.0,1082.0,2.1,0.5,0.2,132.4,87.3,6.8,-1.57,10452
+    ```
+
+    ### PointCloud Fields
+
+    Point cloud files include geometric coordinates and additional attributes. Key fields include:
+
+    1. `Intensity`: LiDAR return intensity for each point.
+    2. `Semantic`: semantic class label per point.
+    3. `Instance`: instance ID per point.
+
+    Together with point coordinates (`x`, `y`, `z`), these fields support semantic segmentation and instance-level 3D reasoning.
 
 ## Benchmark Tasks
 
@@ -144,13 +202,7 @@ WHU-Infra3D defines five benchmark tasks:
 If you find WHU-Infra3D useful in your research, please cite:
 
 ```bibtex
-@article{whuinfra3d,
-  title={WHU-Infra3D: A Full-stack Multi-modal Dataset and Benchmark for 3D Roadside Infrastructure Inventory},
-  author={Liu, Chong and Fu, Luxuan and Feng, Xuyu and Dong, Zhen and Yang, Bisheng},
-  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
-  year={2026},
-  note={to be updated}
-}
+To be updated
 ```
 
 ## Contact
