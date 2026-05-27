@@ -1,7 +1,7 @@
 <h1 align="center"><p>WHU-Infra3D: A Full-stack Multi-modal Dataset and Benchmark for 3D Roadside Infrastructure Inventory</p></h1>
 
 <p align="center">
-  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:85%" />
+  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:100%" />
 </p>
 
 This repository hosts the website materials and documentation for **WHU-Infra3D**.
@@ -40,11 +40,11 @@ To ensure robust model generalization across domain gaps, data collection spanne
 Perceiving these heterogeneous assets begins with comprehensive and varied annotations. The dataset features robust dense 2D bounding boxes in overlapping panoramic views, tightly coupled with high-quality 3D point cloud labels (including semantic classes, instance clusters, and distinct 3D geometry constraints).
 
 <p align="center">
-  <img src="media/Object_detect_annotation.jpg" alt="2D annotations"style="width:85%" />
+  <img src="media/Object_detect_annotation.jpg" alt="2D annotations"style="width:100%" />
 </p>
 
 <p align="center">
-  <img src="media/3D_annotation.jpg" alt="3D annotations"style="width:85%" />
+  <img src="media/3D_annotation.jpg" alt="3D annotations"style="width:100%" />
 </p>
 
 ### 4. Continuous Association Across Views and Frames
