@@ -207,5 +207,5 @@ To be updated
 
 ## Contact
 
-For questions, please contact the maintainers via project email (to be updated).
+For questions, please contact the maintainers via email (liuchongwhu@whu.edu.cn).
 
