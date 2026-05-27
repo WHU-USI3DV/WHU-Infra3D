@@ -41,7 +41,7 @@ Perceiving these heterogeneous assets begins with comprehensive and varied annot
 
 <p align="center">
   <img src="media/Object_detect_annotation.jpg" alt="2D annotations" style="width:auto; height:300px; vertical-align:top;" />
-  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:auto; height:300p; vertical-align:top;" />
+  <img src="media/3D_annotation.jpg" alt="3D annotations" style="width:auto; height:300px; vertical-align:top;" />
 </p>
 
 ### 4. Continuous Association Across Views and Frames
