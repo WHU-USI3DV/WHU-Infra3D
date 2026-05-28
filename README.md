@@ -105,7 +105,7 @@ WHU-Infra3D provides four complementary annotation dimensions:
 ### Current Release Structure 🧱
 
 ```text
-WHU-Infra3D-Dataset/
+WHU-Infra3D/
 ├── Wuhan/
 │   ├── BaseSet/
 │   │   ├── PanoImages/
