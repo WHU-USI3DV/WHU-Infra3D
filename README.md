@@ -178,6 +178,21 @@ Point cloud files include geometric coordinates and additional attributes. Key f
 2. `Semantic`: semantic class label per point.
 3. `Instance`: instance ID per point.
 
+`Semantic` field value mapping:
+
+| Semantic ID | Category |
+|---|---|
+| 1 | Traffic Sign |
+| 2 | Street Light |
+| 3 | Signal Light |
+| 4 | Surveillance Camera |
+| 5 | Cylindrical Bollard |
+| 6 | Fire Hydrant |
+| 7 | Trash Bin |
+| 8 | Manhole |
+| 9 | Traffic Cone |
+| 10 | Spherical Bollard |
+
 Together with point coordinates (`x`, `y`, `z`), these fields support semantic segmentation and instance-level 3D reasoning.
 
 ## Benchmark Tasks 🎯
