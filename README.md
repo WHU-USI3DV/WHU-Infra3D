@@ -164,7 +164,45 @@ For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
   - Refined camera pose file for panoramic frames in the city trajectory.
   - Used to recover exposure position and camera orientation for geometry and cross-modal alignment.
 
+### INSPose_refined.txt Format 🧭
+
+Example row:
+
+```text
+00000000000000001 20210524053219323904 19939.323019 -1937.155469 -1345.304770 8.388862 30.48317300962 114.49022292385 0.185377 1.407768 -107.045143
+```
+
+Each line in `INSPose_refined.txt` contains 11 whitespace-separated columns:
+
+1. `frame_id`: frame/image identifier (matches pano stem, e.g., `000...` or `ladybug_panoramic_...`).
+2. `time_1`: time-related field from acquisition records (can be ignored in current processing).
+3. `time_2`: time-related field from acquisition records (can be ignored in current processing).
+4. `pos_x`: camera exposure position X in the mapped/world coordinate system.
+5. `pos_y`: camera exposure position Y in the mapped/world coordinate system.
+6. `pos_z`: camera exposure position Z (height).
+7. `geo_lon_or_aux`: geographic longitude or auxiliary geodetic field (source-dependent).
+8. `geo_lat_or_aux`: geographic latitude or auxiliary geodetic field (source-dependent).
+9. `roll`: camera roll angle (degrees).
+10. `pitch`: camera pitch angle (degrees).
+11. `heading`: camera heading/yaw angle (degrees).
+
+Columns used by the current processing code in this repository:
+
+- `frame_id` (column 1)
+- `pos_x, pos_y, pos_z` (columns 4-6)
+- `roll, pitch, heading` (columns 9-11)
+
+Columns 2 and 3 are time-related metadata and are ignored by the current processing pipeline.
+
+Reference from code logic: `np.loadtxt(..., usecols=(0, 3, 4, 5, 8, 9, 10))`.
+
 ### image_detect_track_3dbox TXT Format 🧾
+
+Example row:
+
+```text
+Traffic Sign,1200.0,980.0,1288.0,1082.0,2.1,0.5,0.2,132.4,87.3,6.8,-1.57,10452
+```
 
 Each annotation file is comma-separated. Each row has 13 columns:
 
@@ -181,12 +219,6 @@ Each annotation file is comma-separated. Each row has 13 columns:
 11. `z`: 3D box center Z in world/map coordinate system.
 12. `rot_y`: yaw/orientation of the 3D box.
 13. `object_id`: cross-image instance ID for the same physical infrastructure object.
-
-Example row:
-
-```text
-Traffic Sign,1200.0,980.0,1288.0,1082.0,2.1,0.5,0.2,132.4,87.3,6.8,-1.57,10452
-```
 
 ### PointCloud Fields ☁️
 
