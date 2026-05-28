@@ -61,16 +61,16 @@ Attribute and status annotation is a core highlight of WHU-Infra3D rather than a
   <img src="media/Attribute_Schema.jpg" alt="Attribute schema" style="width:46%" />
 </p>
 
-## News
+## News 📰
 
-- 2026-XX-XX: WHU-Infra3D website repository initialized.
-- 2026-XX-XX: Dataset release information will be updated soon.
+- 2026-05-28: WHU-Infra3D dataset is now publicly available. 🎉
+<!-- - 2026-XX-XX: Our WHU-Infra3D paper is published on arXiv: TBD -->
 
-## Download
+## Download 📦
 
-Data request form: https://wj.qq.com/s2/26835830/80bf/
+Data request form 📝: https://wj.qq.com/s2/26835830/80bf/
 
-Please fill in the questionnaire first. The dataset download links will be provided after submission.
+Please fill in the questionnaire first. The dataset download links will be provided after submission. 🔗
 
 ## Dataset
 
@@ -200,7 +200,7 @@ If you find WHU-Infra3D useful in your research, please cite:
 To be updated
 ```
 
-## Contact
+## Contact ✉️
 
 For questions, please contact the maintainers via email (liuchongwhu@whu.edu.cn).
 
