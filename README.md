@@ -108,24 +108,33 @@ WHU-Infra3D provides four complementary annotation dimensions:
 WHU-Infra3D-Dataset/
 ├── Wuhan/
 │   ├── BaseSet/
-│   │   └── PanoImages/
+│   │   ├── PanoImages/
+│   │   └── coco_base.json
 │   └── CoreSet/
 │       ├── PanoImages/
 │       ├── image_detect_track_3dbox/
+│       ├── coco_core.json
+│       ├── INSPose_refined.txt
 │       └── PointCloud/
 ├── Shanghai/
 │   ├── BaseSet/
-│   │   └── PanoImages/
+│   │   ├── PanoImages/
+│   │   └── coco_base.json
 │   └── CoreSet/
 │       ├── PanoImages/
 │       ├── image_detect_track_3dbox/
+│       ├── coco_core.json
+│       ├── INSPose_refined.txt
 │       └── PointCloud/
 └── Nanjing/
     ├── BaseSet/
-    │   └── PanoImages/
+  │   ├── PanoImages/
+  │   └── coco_base.json
     └── CoreSet/
         ├── PanoImages/
         ├── image_detect_track_3dbox/
+    ├── coco_core.json
+    ├── INSPose_refined.txt
         └── PointCloud/
 ```
 
@@ -145,6 +154,15 @@ For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
 4. `CoreSet/PointCloud/`
   - Stores point cloud data aligned with the core subset.
   - Used for 3D perception and cross-modal tasks.
+5. `BaseSet/coco_base.json`
+  - COCO-format annotation file for BaseSet images.
+  - Includes `images`, `annotations`, and `categories`.
+6. `CoreSet/coco_core.json`
+  - COCO-format annotation file for CoreSet images.
+  - Includes `images`, `annotations`, `categories` (and metadata fields such as `info`, `licenses` when provided).
+7. `CoreSet/INSPose_refined.txt`
+  - Refined camera pose file for panoramic frames in the city trajectory.
+  - Used to recover exposure position and camera orientation for geometry and cross-modal alignment.
 
 ### image_detect_track_3dbox TXT Format 🧾
 
