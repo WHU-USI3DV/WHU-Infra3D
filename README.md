@@ -1,11 +1,5 @@
 <h1 align="center"><p>WHU-Infra3D: A Full-stack Multi-modal Dataset and Benchmark for 3D Roadside Infrastructure Inventory</p></h1>
 
-<p align="center">
-  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:100%" />
-</p>
-
-This repository hosts the website materials and documentation for **WHU-Infra3D**.
-
 ## Introduction 🚀
 
 WHU-Infra3D is a large-scale multi-modal benchmark for urban roadside infrastructure inventory. The dataset is designed to bridge geometric perception and fine-grained cognitive diagnosis by jointly providing panoramic images, LiDAR point clouds, 2D-3D instance association, and rich attribute/status annotations.
@@ -17,6 +11,10 @@ Key characteristics:
 - **5,449** images and **175,021** 2D box annotations.
 - **3,199** 3D instances and **181,351** attribute/status labels in the Core Set.
 - Full-stack support for detection, matching, localization, segmentation, and attribute recognition.
+
+<p align="center">
+  <img src="media/Teaser.jpg" alt="WHU-Infra3D teaser" style="width:100%" />
+</p>
 
 ## Dataset Overview & Visual Highlights 🧭
 
