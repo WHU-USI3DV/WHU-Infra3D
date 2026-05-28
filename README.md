@@ -68,14 +68,9 @@ Attribute and status annotation is a core highlight of WHU-Infra3D rather than a
 
 ## Download
 
-Dataset download link:
+Data request form: https://wj.qq.com/s2/26835830/80bf/
 
-- Google Drive: **TBD**
-- Baidu Netdisk: **TBD**
-
-Data request form:
-
-- **TBD**
+Please fill in the questionnaire first. The dataset download links will be provided after submission.
 
 ## Dataset
 
