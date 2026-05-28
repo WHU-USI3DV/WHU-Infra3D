@@ -6,7 +6,7 @@
 
 This repository hosts the website materials and documentation for **WHU-Infra3D**.
 
-## Introduction
+## Introduction 🚀
 
 WHU-Infra3D is a large-scale multi-modal benchmark for urban roadside infrastructure inventory. The dataset is designed to bridge geometric perception and fine-grained cognitive diagnosis by jointly providing panoramic images, LiDAR point clouds, 2D-3D instance association, and rich attribute/status annotations.
 
@@ -18,7 +18,7 @@ Key characteristics:
 - **3,199** 3D instances and **181,351** attribute/status labels in the Core Set.
 - Full-stack support for detection, matching, localization, segmentation, and attribute recognition.
 
-## Dataset Overview & Visual Highlights
+## Dataset Overview & Visual Highlights 🧭
 
 The core objective of WHU-Infra3D is to transform raw multi-modal observations into a structured roadside asset profile that possesses accurate geometry and fine-grained maintenance semantics. Rather than acting strictly as a collection of disjointed data frames, WHU-Infra3D provides a cohesive, full-stack narrative bridging 2D perception, 3D structure, and cognitive diagnosis.
 
@@ -72,9 +72,9 @@ Data request form 📝: https://wj.qq.com/s2/26835830/80bf/
 
 Please fill in the questionnaire first. The dataset download links will be provided after submission. 🔗
 
-## Dataset
+## Dataset 🗂️
 
-### Categories
+### Categories 🏷️
 
 WHU-Infra3D contains 10 roadside infrastructure categories:
 
@@ -95,7 +95,7 @@ The category distribution exhibits a clear long-tail pattern in both 2D and 3D a
   <img src="media/dataset_longtail_pies.png" alt="Long-tail category distribution" style="width:52%" />
 </p>
 
-### Annotation Dimensions
+### Annotation Dimensions 📐
 
 WHU-Infra3D provides four complementary annotation dimensions:
 
@@ -104,7 +104,7 @@ WHU-Infra3D provides four complementary annotation dimensions:
 3. Cross-frame and cross-modal instance association IDs.
 4. Fine-grained attribute and status annotations for asset diagnosis.
 
-### Current Release Structure
+### Current Release Structure 🧱
 
 ```text
 WHU-Infra3D-Dataset/
@@ -131,7 +131,7 @@ WHU-Infra3D-Dataset/
         └── PointCloud/
 ```
 
-    ### Folder Contents
+    ### Folder Contents 📁
 
     For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
 
@@ -148,7 +148,7 @@ WHU-Infra3D-Dataset/
       - Stores point cloud data aligned with the core subset.
       - Used for 3D perception and cross-modal tasks.
 
-    ### image_detect_track_3dbox TXT Format
+    ### image_detect_track_3dbox TXT Format 🧾
 
     Each annotation file is comma-separated. Each row has 13 columns:
 
@@ -172,7 +172,7 @@ WHU-Infra3D-Dataset/
     Traffic Sign,1200.0,980.0,1288.0,1082.0,2.1,0.5,0.2,132.4,87.3,6.8,-1.57,10452
     ```
 
-    ### PointCloud Fields
+    ### PointCloud Fields ☁️
 
     Point cloud files include geometric coordinates and additional attributes. Key fields include:
 
@@ -182,7 +182,7 @@ WHU-Infra3D-Dataset/
 
     Together with point coordinates (`x`, `y`, `z`), these fields support semantic segmentation and instance-level 3D reasoning.
 
-## Benchmark Tasks
+## Benchmark Tasks 🎯
 
 WHU-Infra3D defines five benchmark tasks:
 
@@ -192,7 +192,7 @@ WHU-Infra3D defines five benchmark tasks:
 4. Point Cloud Segmentation
 5. Attribute Recognition
 
-## Citation
+## Citation 📚
 
 If you find WHU-Infra3D useful in your research, please cite:
 
