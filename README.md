@@ -106,36 +106,36 @@ WHU-Infra3D provides four complementary annotation dimensions:
 
 ```text
 WHU-Infra3D-Dataset/
-  Wuhan/
-    BaseSet/
-      PanoImages/
-      coco_base.json
-    CoreSet/
-      PanoImages/
-      image_detect_track_3dbox/
-      coco_core.json
-      INSPose_refined.txt
-      PointCloud/
-  Shanghai/
-    BaseSet/
-      PanoImages/
-      coco_base.json
-    CoreSet/
-      PanoImages/
-      image_detect_track_3dbox/
-      coco_core.json
-      INSPose_refined.txt
-      PointCloud/
-  Nanjing/
-    BaseSet/
-      PanoImages/
-      coco_base.json
-    CoreSet/
-      PanoImages/
-      image_detect_track_3dbox/
-      coco_core.json
-      INSPose_refined.txt
-      PointCloud/
+├── Wuhan/
+│   ├── BaseSet/
+│   │   ├── PanoImages/
+│   │   └── coco_base.json
+│   └── CoreSet/
+│       ├── PanoImages/
+│       ├── image_detect_track_3dbox/
+│       ├── coco_core.json
+│       ├── INSPose_refined.txt
+│       └── PointCloud/
+├── Shanghai/
+│   ├── BaseSet/
+│   │   ├── PanoImages/
+│   │   └── coco_base.json
+│   └── CoreSet/
+│       ├── PanoImages/
+│       ├── image_detect_track_3dbox/
+│       ├── coco_core.json
+│       ├── INSPose_refined.txt
+│       └── PointCloud/
+└── Nanjing/
+    ├── BaseSet/
+    │   ├── PanoImages/
+    │   └── coco_base.json
+    └── CoreSet/
+        ├── PanoImages/
+        ├── image_detect_track_3dbox/
+        ├── coco_core.json
+        ├── INSPose_refined.txt
+        └── PointCloud/
 ```
 
 ### Folder Contents 📁
