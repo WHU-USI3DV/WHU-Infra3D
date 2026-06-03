@@ -153,6 +153,7 @@ For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
   - Each row describes one observed infrastructure instance with 2D box + 3D box + tracking/object identity.
 4. `CoreSet/PointCloud/`
   - Stores point cloud data aligned with the core subset.
+  - Coordinates have been anonymized by city-level global centering.
   - Used for 3D perception and cross-modal tasks.
 5. `BaseSet/coco_base.json`
   - COCO-format annotation file for BaseSet images.
@@ -162,39 +163,40 @@ For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
   - Includes `images`, `annotations`, `categories` (and metadata fields such as `info`, `licenses` when provided).
 7. `CoreSet/INSPose_refined.txt`
   - Refined camera pose file for panoramic frames in the city trajectory.
+  - Coordinates have been city-level centered; latitude/longitude columns removed for privacy.
   - Used to recover exposure position and camera orientation for geometry and cross-modal alignment.
 
 ### INSPose_refined.txt Format 🧭
 
+> **Note:** Coordinates in this file have been anonymized by city-level centering. The original latitude/longitude columns have been removed for privacy protection.
+
 Example row:
 
 ```text
-00000000000000001 20210524053219323904 19939.323019 -1937.155469 -1345.304770 8.388862 30.48317300962 114.49022292385 0.185377 1.407768 -107.045143
+00000000000000001 20210524053219323904 19939.323019 -1080.177 -1065.328 1.334 0.185377 1.407768 -107.045143
 ```
 
-Each line in `INSPose_refined.txt` contains 11 whitespace-separated columns:
+Each line in `INSPose_refined.txt` contains 9 whitespace-separated columns:
 
 1. `frame_id`: frame/image identifier (matches pano stem, e.g., `000...` or `ladybug_panoramic_...`).
 2. `time_1`: time-related field from acquisition records (can be ignored in current processing).
 3. `time_2`: time-related field from acquisition records (can be ignored in current processing).
-4. `pos_x`: camera exposure position X in the mapped/world coordinate system.
-5. `pos_y`: camera exposure position Y in the mapped/world coordinate system.
-6. `pos_z`: camera exposure position Z (height).
-7. `geo_lon_or_aux`: geographic longitude or auxiliary geodetic field (source-dependent).
-8. `geo_lat_or_aux`: geographic latitude or auxiliary geodetic field (source-dependent).
-9. `roll`: camera roll angle (degrees).
-10. `pitch`: camera pitch angle (degrees).
-11. `heading`: camera heading/yaw angle (degrees).
+4. `pos_x` 🗺️: camera exposure position X in the anonymized coordinate system.
+5. `pos_y` 🗺️: camera exposure position Y in the anonymized coordinate system.
+6. `pos_z` 🗺️: camera exposure position Z (height, unchanged).
+7. `roll`: camera roll angle (degrees).
+8. `pitch`: camera pitch angle (degrees).
+9. `heading`: camera heading/yaw angle (degrees).
 
 Columns used by the current processing code in this repository:
 
 - `frame_id` (column 1)
 - `pos_x, pos_y, pos_z` (columns 4-6)
-- `roll, pitch, heading` (columns 9-11)
+- `roll, pitch, heading` (columns 7-9)
 
 Columns 2 and 3 are time-related metadata and are ignored by the current processing pipeline.
 
-Reference from code logic: `np.loadtxt(..., usecols=(0, 3, 4, 5, 8, 9, 10))`.
+Reference from code logic: `np.loadtxt(..., usecols=(0, 3, 4, 5, 6, 7, 8))`.
 
 ### image_detect_track_3dbox TXT Format 🧾
 
