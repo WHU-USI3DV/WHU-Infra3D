@@ -115,6 +115,7 @@ WHU-Infra3D/
 │       ├── image_detect_track_3dbox/
 │       ├── coco_core.json
 │       ├── INSPose_refined.txt
+│       ├── Attributes/
 │       └── PointCloud/
 ├── Shanghai/
 │   ├── BaseSet/
@@ -125,6 +126,7 @@ WHU-Infra3D/
 │       ├── image_detect_track_3dbox/
 │       ├── coco_core.json
 │       ├── INSPose_refined.txt
+│       ├── Attributes/
 │       └── PointCloud/
 └── Nanjing/
     ├── BaseSet/
@@ -135,6 +137,7 @@ WHU-Infra3D/
         ├── image_detect_track_3dbox/
         ├── coco_core.json
         ├── INSPose_refined.txt
+        ├── Attributes/
         └── PointCloud/
 ```
 
@@ -165,6 +168,61 @@ For each city (Wuhan/Shanghai/Nanjing), the folder roles are:
   - Refined camera pose file for panoramic frames in the city trajectory.
   - Coordinates have been city-level centered; latitude/longitude columns removed for privacy.
   - Used to recover exposure position and camera orientation for geometry and cross-modal alignment.
+8. `CoreSet/Attributes/`
+  - Per-image JSON files with fine-grained attribute and status annotations.
+  - Each file has the same stem as its corresponding panoramic image.
+  - Contains object-level attribute labels (e.g., damage status, working condition, shape, material).
+
+### Attributes JSON Format 🏷️
+
+Each file in `Attributes/` is a JSON object with a single key `detected_objects`, which contains a list of annotated infrastructure instances.
+
+Example entry:
+
+```json
+{
+  "id": 1,
+  "label_id": 3,
+  "bbox": [4583.40, 2035.58, 20.35, 35.20],
+  "category": "信号灯",
+  "attributes": {
+    "类型": "行人信号灯",
+    "工作状态": "正在亮灯",
+    "颜色": ["红"],
+    "破损情况": "完好",
+    "设备类型": "纯信号灯"
+  }
+}
+```
+
+JSON fields:
+
+1. `id`: unique object identifier within the image.
+2. `label_id`: numeric label (see category mapping below).
+3. `bbox`: 2D bounding box in `[x, y, width, height]` format (pixel coordinates, 8192×4096 panoramic image).
+4. `category`: category name in Chinese.
+5. `attributes`: dictionary of attribute name → value pairs. Values can be strings, lists, or numeric.
+
+Chinese–English category mapping:
+
+| label_id | Chinese | English |
+|---|---|---|
+| 1 | 路灯 | Street Light |
+| 2 | 交通标志牌 | Traffic Sign |
+| 3 | 信号灯 | Signal Light |
+| 4 | 监控探头 / 监控摄像头 | Surveillance Camera |
+| 5 | 隔离桩 | Cylindrical Bollard |
+| 6 | 消防栓 | Fire Hydrant |
+| 7 | 垃圾桶 | Trash Bin |
+| 8 | 井盖 | Manhole |
+| 9 | 锥桶 | Traffic Cone |
+| 10 | 球形隔离墩 | Spherical Bollard |
+
+Common attribute keys across all categories include:
+
+- **Status-oriented**: `损坏情况` (damage), `工作状态` (working status), `破损情况` (breakage), `隐患情况` (hazard), `遮挡情况` (occlusion)
+- **Physical attributes**: `类型` (type), `形状` (shape), `颜色` (color), `材质` (material), `位姿状态` (posture)
+- **Category-specific**: `灯臂数量` (arm count, for street lights), `反光属性` (reflectivity, for bollards), `表面图案` (surface pattern, for manholes), `设备类型` (device type, for signal lights)
 
 ### INSPose_refined.txt Format 🧭
 
@@ -269,3 +327,5 @@ To be updated
 
 For questions, please contact the maintainers via email (liuchongwhu@whu.edu.cn).
 
+
+Test line added by Codex.
