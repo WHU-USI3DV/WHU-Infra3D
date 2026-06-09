@@ -203,20 +203,20 @@ JSON fields:
 4. `category`: category name in Chinese.
 5. `attributes`: dictionary of attribute name → value pairs. Values can be strings, lists, or numeric.
 
-Chinese–English category mapping:
+The `category` field uses English names and `label_id` follows the COCO standard:
 
-| label_id | Chinese | English |
-|---|---|---|
-| 1 | 路灯 | Street Light |
-| 2 | 交通标志牌 | Traffic Sign |
-| 3 | 信号灯 | Signal Light |
-| 4 | 监控探头 / 监控摄像头 | Surveillance Camera |
-| 5 | 隔离桩 | Cylindrical Bollard |
-| 6 | 消防栓 | Fire Hydrant |
-| 7 | 垃圾桶 | Trash Bin |
-| 8 | 井盖 | Manhole |
-| 9 | 锥桶 | Traffic Cone |
-| 10 | 球形隔离墩 | Spherical Bollard |
+| label_id | English |
+|---|---|
+| 1 | Traffic Sign |
+| 2 | Street Light |
+| 3 | Signal Light |
+| 4 | Surveillance Camera |
+| 5 | Cylindrical Bollard |
+| 6 | Fire Hydrant |
+| 7 | Trash Bin |
+| 8 | Manhole |
+| 9 | Traffic Cone |
+| 10 | Spherical Bollard |
 
 Common attribute keys across all categories include:
 
